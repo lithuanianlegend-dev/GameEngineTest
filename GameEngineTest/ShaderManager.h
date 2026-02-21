@@ -21,7 +21,10 @@ public:
 	// clean up everything!
 	static void cleanUp();
 
+
+
 protected:
 	// this is a hashmap. it holds our data and stuff
 	std::unordered_map<std::string, Shader*> shaders;
 };
+

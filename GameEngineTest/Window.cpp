@@ -1,5 +1,7 @@
 #include "Window.h"
 
+Window windowHandler;
+
 void Window::FramebufferSizeCallback(GLFWwindow* window, int width, int height)
 {
 	s_width = width;
@@ -9,6 +11,8 @@ void Window::FramebufferSizeCallback(GLFWwindow* window, int width, int height)
 
 bool Window::InitWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title)
 {
+
+
 	s_width = SCR_WIDTH;
 	s_height = SCR_HEIGHT;
 
@@ -16,8 +20,9 @@ bool Window::InitWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4); // OpenGL 4.?
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6); // OpenGL 4.6
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // use the core profile
+	glfwWindowHint(GLFW_SAMPLES, 8); // antialising
 
-	Window::handle = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, title, NULL, NULL); // create window
+	handle = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, title, NULL, NULL); // create window
 
 	glfwSetFramebufferSizeCallback(handle, FramebufferSizeCallback); // when window resizes, reset rendering viewport to match
 
@@ -35,6 +40,8 @@ bool Window::InitWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title)
 		std::cout << "GLAD INITIATION FAILED FOR UNKNOWN REASON!" << std::endl;
 		return false;
 	}
+
+	glfwSwapInterval(1); // this basically turns on Vsync (makes my GPU not wheeze)
 
 	return true; // everything is fine! dont fail the program
 }

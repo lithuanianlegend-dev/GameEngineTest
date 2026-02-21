@@ -3,6 +3,7 @@
 VertexArray::VertexArray(const float* vertices,
 	size_t vertexSize,
 	std::vector<VertexAttribute>& layout,
+	size_t vertexCount,
 	const unsigned int* indices,
 	size_t indexCount,
 	GLenum drawType)
@@ -36,13 +37,16 @@ VertexArray::VertexArray(const float* vertices,
 		);
 	}
 
+	this->vertexCount = vertexCount;
+	this->indicesCount = static_cast<GLsizei>(indexCount);
+
 	glBindVertexArray(0);
 }
 
 VertexArray::~VertexArray()
 {
 	glDeleteBuffers(1, &VBO);
-	glDeleteBuffers(1, &VAO);
+	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &EBO);
 }
 
@@ -55,3 +59,14 @@ void VertexArray::Unbind() const
 {
 	glBindVertexArray(0);
 }
+
+void VertexArray::Draw(std::vector<VertexAttribute>& layout)
+{
+	Bind();
+	if (hasEBO)
+		glDrawElements(GL_TRIANGLES, indicesCount, GL_UNSIGNED_INT, 0);
+	else
+		glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+	Unbind();
+}
+

@@ -1,15 +1,16 @@
 #include "EngineBase.h"
 
-
 int main()
 {
-	Window::InitWindow(800, 600, "Why am i doing this?");
+	Window::InitWindow(800, 600, "OpenGL Engine");
+
+	Renderer::StartOfFunc();
 
 	std::vector<VertexArray::VertexAttribute> layout = {
 		{0, 3, GL_FLOAT, GL_FALSE, 0}
 	};
 
-	ShaderManager::loadShader("shader", "defaultShader.vs", "defaultShader.fs", " ");
+	ShaderManager::loadShader("shader", "defaultShader.vs", "defaultShader.fs", "");
 	Shader* shader = ShaderManager::GetShader("shader");
 
 	float vertices[] = {
@@ -20,17 +21,16 @@ int main()
 	};
 
 
-	VertexArray mesh(vertices, sizeof(vertices), layout, nullptr, 0, GL_STATIC_DRAW);
+	VertexArray mesh(vertices, sizeof(vertices), layout, 3, nullptr, 0, GL_STATIC_DRAW);
 
 	while (!glfwWindowShouldClose(Window::handle))
 	{
 		Renderer::BeginFrame();
 
-		shader->Activate();
+		// Renderer::DrawScene(scene) make something like this
 
-		mesh.Bind();
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-		mesh.Unbind();
+		shader->Activate();
+		mesh.Draw(layout);
 
 		Renderer::EndFrame();
 	}

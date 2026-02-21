@@ -20,17 +20,22 @@ public:
 	VertexArray(const float* vertices,
 		size_t vertexSize,
 		std::vector<VertexAttribute>& layout,
+		size_t vertexCount,
 		const unsigned int* indices = nullptr, 
 		size_t indexCount = 0, 
 		GLenum drawType = GL_STATIC_DRAW);
 
 	~VertexArray();
 
+	void Draw(std::vector<VertexAttribute>& layout);
 	void Bind() const;
 	void Unbind() const;
 
 
-private:
+protected:
 	GLuint VBO, VAO, EBO;
 	bool hasEBO;
+
+	GLsizei vertexCount = 0;
+	GLsizei indicesCount = 0;
 };

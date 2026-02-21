@@ -3,6 +3,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include "Window.h"
+#include "Time.h"
+#include "Input.h"
 
 // peepeepoopoo
 
@@ -14,6 +16,8 @@ public:
 
 	// when renderloop ends, do this.
 	static void EndFrame();
+
+	static void StartOfFunc();
 
 	static void Draw();
 };

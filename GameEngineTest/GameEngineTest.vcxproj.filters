@@ -81,6 +81,12 @@
     <ClCompile Include="VertexArray.cpp">
       <Filter>Source Files\Engine\Render</Filter>
     </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Source Files\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files\Engine\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\libraries\glm\glm\detail\_features.hpp">
@@ -959,7 +965,7 @@
     <ClInclude Include="EngineBase.h">
       <Filter>Header Files\Engine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Render.h">
+    <ClInclude Include="Renderer.h">
       <Filter>Header Files\Engine\Render</Filter>
     </ClInclude>
     <ClInclude Include="Cleanup.h">
@@ -970,6 +976,12 @@
     </ClInclude>
     <ClInclude Include="VertexArray.h">
       <Filter>Header Files\Engine\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header Files\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files\Engine\Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
