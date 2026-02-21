@@ -15,8 +15,6 @@ public:
 
 	static bool InitWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title); // We initiate the window so we can actually see stuff
 
-	static void WindowEndFrame(); // At the end of the render loop, do these thingies.
-
 	static int GetWidth() { return s_width; }
 	static int GetHeight() { return s_height; }
 private:

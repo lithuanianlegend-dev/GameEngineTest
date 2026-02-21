@@ -43,6 +43,9 @@
     <Filter Include="Source Files\Engine\Input">
       <UniqueIdentifier>{386cb267-13c2-442d-bb47-53eb15f6d9cf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Shaders">
+      <UniqueIdentifier>{bac50af8-19a8-402a-9b5e-1727ef3d4797}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\libraries\glm\glm\detail\glm.cpp">
@@ -64,6 +67,18 @@
       <Filter>Source Files\Engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files\Engine\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\Engine\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.h">
+      <Filter>Header Files\Engine\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>Source Files\Engine\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexArray.cpp">
       <Filter>Source Files\Engine\Render</Filter>
     </ClCompile>
   </ItemGroup>
@@ -950,6 +965,12 @@
     <ClInclude Include="Cleanup.h">
       <Filter>Header Files\Engine\Core</Filter>
     </ClInclude>
+    <ClInclude Include="ShaderLoader.h">
+      <Filter>Header Files\Engine\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArray.h">
+      <Filter>Header Files\Engine\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\libraries\glm\glm\gtx\associated_min_max.inl">
@@ -1371,6 +1392,12 @@
     </None>
     <None Include="..\..\..\..\..\libraries\glm\glm\gtx\wrap.inl">
       <Filter>Resource Files\ExternalLibraries\glm</Filter>
+    </None>
+    <None Include="defaultShader.vs">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="defaultShader.fs">
+      <Filter>Resource Files\Shaders</Filter>
     </None>
   </ItemGroup>
 </Project>

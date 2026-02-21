@@ -38,9 +38,3 @@ bool Window::InitWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title)
 
 	return true; // everything is fine! dont fail the program
 }
-
-void Window::WindowEndFrame() // this just handles all the event polling, swappingbuffers, but does it so it looks nice in my Main.cpp file!
-{
-	glfwSwapBuffers(Window::handle);
-	glfwPollEvents();
-}
