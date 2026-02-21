@@ -11,10 +11,9 @@
 
 class Shader
 {
-protected:
-	unsigned int ID;
-
 public:
+    unsigned int ID;
+
 	// we make a shader with all these!
 	Shader(const char* vertexShaderPath, const char* fragmentShaderPath, const char* geometryShaderPath = nullptr);
 	

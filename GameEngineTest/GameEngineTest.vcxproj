@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Windows 11\Documents\libraries\glad\include;C:\Users\Windows 11\Documents\libraries\glm\glm;C:\Users\Windows 11\Documents\libraries\Assimp\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Windows 11\Documents\libraries\stb_image;C:\Users\Windows 11\Documents\libraries\glad\include;C:\Users\Windows 11\Documents\libraries\glm\glm;C:\Users\Windows 11\Documents\libraries\Assimp\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Windows 11\Documents\libraries\glfw-3.4.bin.WIN64\glfw-3.4.bin.WIN64\include;$(LibraryPath)</LibraryPath>
     <SourcePath>C:\Users\Windows 11\Documents\libraries\glad\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
@@ -141,10 +141,13 @@
     <ClCompile Include="Cleanup.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="ShaderManager.h" />
+    <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="TextureLoader.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="VertexArray.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -440,11 +443,15 @@
     <ClInclude Include="..\..\..\..\..\libraries\glm\glm\vec3.hpp" />
     <ClInclude Include="..\..\..\..\..\libraries\glm\glm\vec4.hpp" />
     <ClInclude Include="..\..\..\..\..\libraries\glm\glm\vector_relational.hpp" />
+    <ClInclude Include="..\..\..\..\..\libraries\stb_image\stb_image.h" />
     <ClInclude Include="Cleanup.h" />
     <ClInclude Include="EngineBase.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="ShaderLoader.h" />
+    <ClInclude Include="TextureLoader.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="VertexArray.h" />
     <ClInclude Include="Window.h" />
@@ -590,8 +597,25 @@
     <None Include="..\..\..\..\..\libraries\glm\glm\gtx\vector_angle.inl" />
     <None Include="..\..\..\..\..\libraries\glm\glm\gtx\vector_query.inl" />
     <None Include="..\..\..\..\..\libraries\glm\glm\gtx\wrap.inl" />
+    <None Include="..\..\..\..\..\Models\backpack\backpack.mtl" />
     <None Include="defaultShader.fs" />
     <None Include="defaultShader.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\Models\backpack\ao.jpg" />
+    <Image Include="..\..\..\..\..\Models\backpack\diffuse.jpg" />
+    <Image Include="..\..\..\..\..\Models\backpack\normal.png" />
+    <Image Include="..\..\..\..\..\Models\backpack\roughness.jpg" />
+    <Image Include="..\..\..\..\..\Models\backpack\specular.jpg" />
+    <Image Include="..\..\..\..\..\textures\cat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Models\backpack\backpack.obj">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\Models\backpack\source_attribution.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

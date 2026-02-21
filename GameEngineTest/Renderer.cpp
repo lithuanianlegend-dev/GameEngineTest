@@ -2,12 +2,7 @@
 
 void Renderer::BeginFrame()
 {
-	InputHandler::ProcessInput();
-
-	Time::Update();
-	Time::MeasureFramesPerSecond();
-	
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.3, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 

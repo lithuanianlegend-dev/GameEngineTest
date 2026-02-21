@@ -46,6 +46,18 @@
     <Filter Include="Resource Files\Shaders">
       <UniqueIdentifier>{bac50af8-19a8-402a-9b5e-1727ef3d4797}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Engine\ext">
+      <UniqueIdentifier>{ee188a33-b20d-4f46-b2a4-771d62d706b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Textures">
+      <UniqueIdentifier>{d8add5e2-9f7f-41cc-8a86-444557c866b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Models">
+      <UniqueIdentifier>{53c17102-f217-46fa-b60c-0c58c6a4cb29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Models\backpack">
+      <UniqueIdentifier>{6e735207-3dfd-4f7d-9015-7889485f3ffe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\libraries\glm\glm\detail\glm.cpp">
@@ -86,6 +98,15 @@
     </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Source Files\Engine\ext</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureLoader.cpp">
+      <Filter>Source Files\Engine\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files\Engine\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -983,6 +1004,18 @@
     <ClInclude Include="Input.h">
       <Filter>Header Files\Engine\Input</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\libraries\stb_image\stb_image.h">
+      <Filter>Resource Files\ExternalLibraries</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureLoader.h">
+      <Filter>Header Files\Engine\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header Files\Engine\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files\Engine\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\libraries\glm\glm\gtx\associated_min_max.inl">
@@ -1411,5 +1444,36 @@
     <None Include="defaultShader.fs">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="..\..\..\..\..\Models\backpack\backpack.mtl">
+      <Filter>Resource Files\Models\backpack</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Models\backpack\backpack.obj">
+      <Filter>Resource Files\Models\backpack</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\textures\cat.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Models\backpack\ao.jpg">
+      <Filter>Resource Files\Models\backpack</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Models\backpack\diffuse.jpg">
+      <Filter>Resource Files\Models\backpack</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Models\backpack\normal.png">
+      <Filter>Resource Files\Models\backpack</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Models\backpack\roughness.jpg">
+      <Filter>Resource Files\Models\backpack</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Models\backpack\specular.jpg">
+      <Filter>Resource Files\Models\backpack</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\Models\backpack\source_attribution.txt">
+      <Filter>Resource Files\Models\backpack</Filter>
+    </Text>
   </ItemGroup>
 </Project>
