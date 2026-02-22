@@ -37,4 +37,5 @@ void InputHandler::ProcessInput(Camera& camera)
 		camera.ProcessKeyboard(UP, Time::getDeltaTime());
 	if (glfwGetKey(Window::handle, GLFW_KEY_Q) == GLFW_PRESS)
 		camera.ProcessKeyboard(DOWN, Time::getDeltaTime());
+
 }

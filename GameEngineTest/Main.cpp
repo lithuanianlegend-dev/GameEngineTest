@@ -61,21 +61,34 @@ int main()
 		-0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
 		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f
 	};
-
-	VertexArray mesh(vertices, sizeof(vertices), layout, 36, nullptr, 0, GL_STATIC_DRAW);
 	GLuint textureTest = TextureLoader::loadTexture("res/textures/guy.png");
 
 	shader->Activate();
 	shader->setInt("texture1", 0);
 
-	GameObject triangle(&mesh);
-
 	glm::mat4 projection;
 	projection = glm::perspective(glm::radians(45.0f), float(Window::s_width) / float(Window::s_height), 0.1f, 100.0f);
 
+	Scene scene("TestScene", 1);
+	Scene scene2("TestScene2", 2);
+
+	std::shared_ptr<VertexArray> meshPtr(
+		new VertexArray(vertices, sizeof(vertices), layout, 36, nullptr, 0, GL_STATIC_DRAW)
+	);
+
+	auto triangle = std::make_shared<GameObject>(meshPtr);
+	auto triangle2 = std::make_shared<GameObject>(meshPtr);
+	auto triangle3 = std::make_shared<GameObject>(meshPtr);
+
+	triangle2->SetPosition(glm::vec3(0.0f, 0.0f, 3.0f));
+	triangle3->SetPosition(glm::vec3(0.0f, 1.0f, 0.0f));
+
+	scene.AddObjects({ triangle });
+	scene2.AddObjects({ triangle2 });
+
 	while (!glfwWindowShouldClose(Window::handle))
 	{
-
+		
 		InputHandler::ProcessInput(camera);
 
 		Time::Update();
@@ -86,6 +99,17 @@ int main()
 		// -----------------------------------------
 		//			 TEST WILL REMOVE.
 		// -----------------------------------------
+
+
+
+		if (glfwGetKey(Window::handle, GLFW_KEY_G) == GLFW_PRESS)
+		{
+			scene2.DrawScene(shader);
+		}
+		else
+		{
+			scene.DrawScene(shader);
+		}
 
 		glm::mat4 view = camera.GetViewMatrix();
 
@@ -99,7 +123,8 @@ int main()
 		float t_value = glfwGetTime();
 		float value = sin(t_value / 2) + 0.5f;
 
-		triangle.Draw(shader);
+
+		scene.DrawScene(shader);
 
 		//-----------------------------------------------
 

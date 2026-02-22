@@ -6,6 +6,7 @@
 #include "glm.hpp"
 #include "Time.h"
 #include "Camera.h"
+#include "Scene.h"
 
 class InputHandler {
 public:

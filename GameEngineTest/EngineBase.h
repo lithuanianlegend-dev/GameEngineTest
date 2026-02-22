@@ -19,9 +19,9 @@
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 #include <gtc/type_ptr.hpp>
-#include "Mesh.h"
 #include "GameObject.h"
 #include "Camera.h"
+#include "Scene.h"
 
 #include <GLAD/glad.h>
 #include <GLFW/glfw3.h>
