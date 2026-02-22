@@ -17,7 +17,7 @@ public:
 	// when renderloop ends, do this.
 	static void EndFrame();
 
-	static void StartOfFunc();
+	static void Init();
 
 	static void Draw();
 };

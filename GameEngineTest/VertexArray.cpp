@@ -1,8 +1,10 @@
 #include "VertexArray.h"
 
+
+
 VertexArray::VertexArray(const float* vertices,
 	size_t vertexSize,
-	std::vector<VertexAttribute>& layout,
+	const std::vector<VertexAttribute>& layout,
 	size_t vertexCount,
 	const unsigned int* indices,
 	size_t indexCount,
@@ -47,7 +49,8 @@ VertexArray::~VertexArray()
 {
 	glDeleteBuffers(1, &VBO);
 	glDeleteVertexArrays(1, &VAO);
-	glDeleteBuffers(1, &EBO);
+	if (hasEBO)
+		glDeleteBuffers(1, &EBO);
 }
 
 void VertexArray::Bind() const
@@ -60,13 +63,12 @@ void VertexArray::Unbind() const
 	glBindVertexArray(0);
 }
 
-void VertexArray::Draw(std::vector<VertexAttribute>& layout)
+void VertexArray::Draw()
 {
 	Bind();
 	if (hasEBO)
 		glDrawElements(GL_TRIANGLES, indicesCount, GL_UNSIGNED_INT, 0);
 	else
 		glDrawArrays(GL_TRIANGLES, 0, vertexCount);
-	Unbind();
 }
 

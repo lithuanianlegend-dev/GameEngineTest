@@ -138,6 +138,8 @@
     <ClCompile Include="..\..\..\..\..\libraries\glad\src\glad.c" />
     <ClCompile Include="..\..\..\..\..\libraries\glm\glm\detail\glm.cpp" />
     <ClCompile Include="..\..\..\..\..\libraries\glm\glm\glm.cppm" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Camera.h" />
     <ClCompile Include="Cleanup.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -450,6 +452,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="ShaderLoader.h" />
     <ClInclude Include="TextureLoader.h" />
     <ClInclude Include="Time.h" />
@@ -607,7 +610,7 @@
     <Image Include="..\..\..\..\..\Models\backpack\normal.png" />
     <Image Include="..\..\..\..\..\Models\backpack\roughness.jpg" />
     <Image Include="..\..\..\..\..\Models\backpack\specular.jpg" />
-    <Image Include="..\..\..\..\..\textures\cat.png" />
+    <Image Include="..\..\..\..\..\textures\guy.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\Models\backpack\backpack.obj">

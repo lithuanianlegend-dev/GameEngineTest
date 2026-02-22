@@ -12,14 +12,17 @@ public:
 		GLuint location;
 		GLint numComponents;
 		GLenum type;
-		GLenum normalized;
-		GLint vertexStride;
+		GLboolean normalized;
+		GLsizei vertexStride;
 		size_t offset;
 	};
 
+
+
+
 	VertexArray(const float* vertices,
 		size_t vertexSize,
-		std::vector<VertexAttribute>& layout,
+		const std::vector<VertexAttribute>& layout,
 		size_t vertexCount,
 		const unsigned int* indices = nullptr, 
 		size_t indexCount = 0, 
@@ -27,7 +30,7 @@ public:
 
 	~VertexArray();
 
-	void Draw(std::vector<VertexAttribute>& layout);
+	void Draw();
 	void Bind() const;
 	void Unbind() const;
 

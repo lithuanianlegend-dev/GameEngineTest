@@ -3,6 +3,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "Input.h"
 #include <iostream>
 
 class Window 
@@ -18,6 +19,7 @@ public:
 	static int GetWidth() { return s_width; }
 	static int GetHeight() { return s_height; }
 private:
+	static void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 
 	static void FramebufferSizeCallback(GLFWwindow* window, int width, int height);
 };

@@ -1,12 +1,35 @@
 #include "Window.h"
 
 Window windowHandler;
+extern Camera camera;
 
 void Window::FramebufferSizeCallback(GLFWwindow* window, int width, int height)
 {
 	s_width = width;
 	s_height = height;
 	glViewport(0, 0, width, height); // we call this so we can resize the OpenGL rendering viewport (our window)
+}
+
+
+void Window::mouse_callback(GLFWwindow* window, double xpos, double ypos)
+{
+	static float lastX = 400, lastY = 300;
+	static bool firstMouse = true;
+
+	if (firstMouse)
+	{
+		lastX = xpos;
+		lastY = ypos;
+		firstMouse = false;
+	}
+
+	float xoffset = xpos - lastX;
+	float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+
+	lastX = xpos;
+	lastY = ypos;
+
+	camera.ProcessMouseMovement(xoffset, yoffset);
 }
 
 bool Window::InitWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title)
@@ -41,7 +64,9 @@ bool Window::InitWindow(int SCR_WIDTH, int SCR_HEIGHT, const char* title)
 		return false;
 	}
 
+	glfwSetCursorPosCallback(handle, mouse_callback);
 	glfwSwapInterval(1); // this basically turns on Vsync (makes my GPU not wheeze)
 
 	return true; // everything is fine! dont fail the program
 }
+

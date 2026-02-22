@@ -108,6 +108,12 @@
     <ClCompile Include="Mesh.cpp">
       <Filter>Source Files\Engine\Render</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.h">
+      <Filter>Header Files\Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Engine\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\libraries\glm\glm\detail\_features.hpp">
@@ -1016,6 +1022,9 @@
     <ClInclude Include="GameObject.h">
       <Filter>Header Files\Engine\Render</Filter>
     </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\Engine\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\libraries\glm\glm\gtx\associated_min_max.inl">
@@ -1452,9 +1461,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\textures\cat.png">
-      <Filter>Resource Files\Textures</Filter>
-    </Image>
     <Image Include="..\..\..\..\..\Models\backpack\ao.jpg">
       <Filter>Resource Files\Models\backpack</Filter>
     </Image>
@@ -1469,6 +1475,9 @@
     </Image>
     <Image Include="..\..\..\..\..\Models\backpack\specular.jpg">
       <Filter>Resource Files\Models\backpack</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\textures\guy.png">
+      <Filter>Resource Files\Textures</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
